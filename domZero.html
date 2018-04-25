@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.css">
+    <title>DOM-0级</title>
+</head>
+<body>
+<div class="lock btn btn-light" id="btn">锁定</div>
+<script>
+    let btn = document.getElementById('btn');
+    //This 是对该DOM元素的引用
+    btn.onclick = function () {
+        //判断锁定状态
+        //第一种方法是判定Class
+        // if (this.className === 'lock') {
+        //     this.className = 'unlock btn btn-info';
+        //     this.innerText = '解锁';
+        // } else {
+        //     this.className = 'lock btn btn-danger';
+        //     this.innerText = '锁定'
+        // }
+        //第二种方法是判断innerHTML
+        if (this.innerHTML === '锁定') {
+            this.className = 'unlock btn btn-info';
+            this.innerHTML = '解锁'
+        } else {
+            this.className = 'lock btn btn-danger';
+            this.innerHTML = '锁定'
+        }
+
+    }
+</script>
+</body>
+</html>
