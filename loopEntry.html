@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>信息录入</title>
+</head>
+<body>
+<h1>循环录入员工信息</h1>
+<input type="button" value="录入">
+<script type="text/javascript">
+    let inputs = document.getElementsByTagName("input");
+    let entry = inputs[0];
+    entry.onclick = entryFn;
+
+    function entryFn() {
+        let interEmp;
+        let i = 0;
+        let arr = [];
+        while (interEmp != -1) {
+            interEmp = prompt("请输入员工信息");
+            arr[i] = interEmp;
+            i++;
+        }
+
+        for (let j = 0; j < arr.length-1; j++) {
+            document.write("第" + (j + 1) + '个员工的信息是:' + arr[j] + "</br>")
+        }
+
+    }
+</script>
+</body>
+</html>
