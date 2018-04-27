@@ -16,4 +16,6 @@ btn.onclick = ()=>{
     console.log(this) //这里的this 并不是对当前元素的引用
 }
 ```
-
+- 检测一个值是不是数字`isNaN(value)==false`
+- 事件触发调用函数不写`()` 
+    - ex: `window.onload =  Fname;`  

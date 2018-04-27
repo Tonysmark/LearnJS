@@ -1,10 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="lib/bootstrap4.css">
+    <title>on-focus</title>
+    <style>
+        .box {
+            margin-top: 30px;
+        }
+
+        .left, .tip {
+            float: left;
+        }
+
+        .tip {
+            display: none;
+            margin-left: 5px;
+        }
+
+        .badge {
+            padding: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let phone = document.getElementById('phone'),
+                tip = document.getElementById('tip'),
+                span = document.getElementById('bage');
+            phone.onfocus = function () {
+                tip.style.display = 'block'
+            };
+            phone.onblur = function () {
+                let phonum = this.value; //value用于获取表单元素的值
+                if (phonum.length == 11 && isNaN(phonum) == false) {
+                    console.log('true');
+                    span.className='badge  badge-success';
+                    span.innerHTML = '✔'
+                }else{
+                    console.log('error');
+                    span.className='badge  badge-danger';
+                    span.innerHTML='❌'
+                }
+            }
+        }
+    </script>
 </head>
 <body>
-$END$
+<div class="box container">
+    <div class="left">
+        <input type="text" id="phone" placeholder="请输入号码">
+    </div>
+    <div  id="tip" class="tip">
+        <span  id="bage" class="badge  badge-info">请输入正确的号码</span>
+    </div>
+</div>
 </body>
 </html>
