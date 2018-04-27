@@ -1,37 +1,3 @@
-// 你出生的那天是同一年的第几天
-// 如果输入不合法就重复输入直到合法位置，当输入合法的时候调到下一个函数
-function validate() {
-    let year = parseInt(prompt('请输入你的出生年份'));
-    let month = parseInt(prompt('请输入你的出生月份'));
-    let day = parseInt(prompt('请输入你的出生日期'));
-    let Cyear = new Date().getFullYear();
-    if (year < Cyear && month < 12 && month > 0 && day < 31 && day > 0) {
-        return calculator(year,month,day);
-    } else {
-        alert('输入错误');
-        return validate();
-    }
-
-    function calculator(year, month, day) {
-        let count = 0;
-        let Pmonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; //循环把你这个月份的前几个月累加出来
-        for (let i = month - 2; i >= 0; i--) {
-            count += Pmonth[i]; //最后输出统计天数count
-            if ((year % 100 !== 0 && year % 4 === 0) || (year % 100 === 0 && year % 400 === 0)) {
-                if (month > 2) {  // 如果是闰年,并且月份大于2
-                    count += 1;
-                }
-            }
-
-        }
-        let result = count + day;
-        document.write("是该年的第" + result + "天");
-    }
-}
-validate();
-
-
-
 {
     // 敏感字 草
 // let defaultStr = prompt('输入搜索内容')
@@ -57,7 +23,7 @@ validate();
 { //统计JS出现的次数，在哪里
     let str = 'JavaScript 是属于网络的脚本语言！JavaScript 被数百万计的网页用来改进设计、验证表单、检测浏览器、创建cookies，以及更多的应用。JavaScript 是因特网上最流行的脚本语言。JavaScript很容易使用！你一定会喜欢它的！'
     let vali = 'JavaScript';
-    let  j=0
+    let  j=0;
     for(let i =0;i<=str.length;i++){
         if(str[i]=='J') {
             let cut = str.slice(0,11);

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./lib/bootstrap4.css">
+    <title>Document</title>
+    <script>
+        window.onload = init;
+
+        function init() {
+            let meun = document.getElementById('menu');
+            //给菜单绑定change 事件
+            meun.onchange = function () {
+                //获取当前选中的值
+                let bgcolor = this.value;
+                // if(bgcolor=='')return //这个可以用于选中为空就什么也不干
+                if (bgcolor=='') {
+                    document.body.style.backgroundColor='#fff'
+                }else {
+                    document.body.style.backgroundColor=bgcolor
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="container input-group">
+    <select class="custom-select" id="menu">
+        <option selected>请选择背景色</option>
+        <option value="#f00">红色</option>
+        <option value="#0f0">绿色</option>
+        <option value="#00f">蓝色</option>
+        <option value="#ff0">黄色</option>
+        <option value="#ccc">灰色</option>
+    </select>
+</div>
+</body>
+</html>
